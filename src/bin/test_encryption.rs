@@ -1,5 +1,5 @@
 use rand::rngs::OsRng;
-use signalprotocol_rs::{
+use libsignal_protocol::{
     IdentityKeyPair, PreKeyBundle, PreKeyId, PreKeyRecord, SessionBuilder,
     SessionCipher, SessionRecord, SignedPreKeyId, SignedPreKeyRecord,
 };
@@ -86,7 +86,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
     
     // Deserialize the encrypted message
-    let cipher_message = signalprotocol_rs::CipherMessage::deserialize(&serialized_encrypted)?;
+    let cipher_message = libsignal_protocol::CipherMessage::deserialize(&serialized_encrypted)?;
     
     // Attempt to decrypt (this will fail because we didn't properly establish Bob's session)
     println!("  ✗ Expected failure: Bob can't decrypt without proper session establishment");

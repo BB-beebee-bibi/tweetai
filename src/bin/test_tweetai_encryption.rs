@@ -1,5 +1,5 @@
 use rand::rngs::OsRng;
-use signalprotocol_rs::{
+use libsignal_protocol::{
     IdentityKey, IdentityKeyPair, PreKeyBundle, PreKeyId, PreKeyRecord, SessionBuilder,
     SessionCipher, SessionRecord, SignedPreKeyId, SignedPreKeyRecord,
 };
@@ -192,7 +192,7 @@ impl EncryptionService {
         );
         
         // Deserialize cipher message
-        let cipher_message = signalprotocol_rs::CipherMessage::deserialize(encrypted_content)?;
+        let cipher_message = libsignal_protocol::CipherMessage::deserialize(encrypted_content)?;
         
         // Decrypt message
         let decrypted = cipher.decrypt(&cipher_message)?;

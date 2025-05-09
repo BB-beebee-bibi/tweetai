@@ -17,7 +17,7 @@ dotenv = "0.15.0"
 env_logger = "0.10.0"
 log = "0.4.17"
 thiserror = "1.0.40"
-signalprotocol-rs = "0.3.0"  # Signal Protocol implementation
+libsignal-protocol = { git = "https://github.com/signalapp/libsignal", tag = "v0.71.0", package = "libsignal-protocol" }  # Official Signal Protocol implementation
 rand = "0.8.5"
 actix-cors = "0.6.4"
 actix-rate-limit = "0.3.1"
